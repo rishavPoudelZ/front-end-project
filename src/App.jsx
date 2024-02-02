@@ -20,18 +20,18 @@ const articles = [
     name: 'Earthen Bottle',
     href: '#',
     price: '$48',
-    imageSrc: './src/assets/1674705497799.png',
+    imageSrc: './src/assets/h47.png',
     imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    text:'Zephyrus vs Strix vs Flow: Whats the difference between ROG laptops?'
+    text:'ROG Zephyrus'
   },
   {
     id: 2,
     name: 'Nomad Tumbler',
     href: '#',
     price: '$35',
-    imageSrc: './src/assets/166864109730.png',
+    imageSrc: './src/assets/h4.png',
     imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    text:'How to set up and optimize your new ROG gaming laptop'
+    text:'ROG Strix'
 
   },
   {
@@ -39,9 +39,9 @@ const articles = [
     name: 'Focus Paper Refill',
     href: '#',
     price: '$89',
-    imageSrc: './src/assets/w600.png',
+    imageSrc: './src/assets/h470.png',
     imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-    text:'ROG Flow Z13-ACRNM RMT02'
+    text:'ROG Flow'
 
   },
   {
@@ -49,48 +49,48 @@ const articles = [
     name: 'Machined Mechanical Pencil',
     href: '#',
     price: '$35',
-    imageSrc: './src/assets/1654040596988.png',
+    imageSrc: './src/assets/1655506515601_upscayl_4x_realesrgan-x4plus.png',
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    text:'Unbridled gaming power and unlimited versatility: hands-on with the ROG Flow Z13'
+    text:'Accessories'
   }
 ]
 
 const products = [
   {
     id: 1,
-    name: 'Basic Tee',
+    name: 'ROG Zephyrus G16 (2024)',
     href: '#',
     imageSrc: './src/assets/w273.png',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    price: '$3,299',
+    color: 'GU605MU-QP095X',
   },
   {
-    id: 1,
-    name: 'Basic Tee',
+    id: 2,
+    name: 'ROG Strix G16 (2024)',
     href: '#',
     imageSrc: './src/assets/w2737.png',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    price: '$2,299',
+    color: 'G614JVR-N4119X',
   },
   {
-    id: 1,
-    name: 'Basic Tee',
+    id: 3,
+    name: 'ROG Strix G18 (2024)',
     href: '#',
     imageSrc: './src/assets/w27300.png',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    price: '$3,500',
+    color: 'G814JVR-N6048X',
   },
   {
-    id: 1,
-    name: 'Basic Tee',
+    id: 4,
+    name: 'ROG Zephyrus G16 (2024)',
     href: '#',
     imageSrc: './src/assets/w273111.png',
     imageAlt: "Front of men's Basic Tee in black.",
-    price: '$35',
-    color: 'Black',
+    price: '$2,799',
+    color: 'GU605MU-QP096X',
   }
   // More products...
 ]
@@ -221,6 +221,7 @@ export default function Example() {
         </div>
         </div>
       </div>
+
       <div className="backgroundRed">
         <div className="mx-auto max-w-2xl px-0 py-2 sm:px-0 sm:py-4 lg:max-w-screen-2xl lg:px-1">
           <h2 className="sr-only">Products</h2>
@@ -234,44 +235,57 @@ export default function Example() {
                     alt={product.imageAlt}
                     className="h-full w-full object-cover object-center group-hover:opacity-75"
                   />
-                  <div className='absolute text-lg text-red-200 inset-3'>{product.text}</div>
+                  <div className='absolute text-red-100 text-2xl center group-hover:underline group-hover:text-black transition-all'>{product.text}</div>
                 </div>
               </a>
             ))}
           </div>
         </div>
       </div>
-      <div className="backgroundRed">
-      <div className="mx-auto max-w-2xl px-4 py-16 sm:px-2 sm:py-24 lg:max-w-7xl lg:px-2">
-        <h2 className="text-2xl font-bold tracking-tight text-gray-900">Products</h2>
 
-        <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-          {products.map((product) => (
-            <div key={product.id} className="group relative">
-              <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80">
-                <img
-                  src={product.imageSrc}
-                  alt={product.imageAlt}
-                  className="h-full w-full object-cover object-center lg:h-full lg:w-full"
-                />
-              </div>
-              <div className="mt-4 flex justify-between">
-                <div>
-                  <h3 className="text-sm text-gray-700">
-                    <a href={product.href}>
-                      <span aria-hidden="true" className="absolute inset-0" />
-                      {product.name}
-                    </a>
-                  </h3>
-                  <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+      <div className="backgroundRed">
+        <div className="mx-auto max-w-2xl px-4 py-16 sm:px-2 sm:py-24 lg:max-w-7xl lg:px-4">
+          <h2 className="text-2xl font-bold tracking-tight text-red-300 text-center">Products</h2>
+
+          <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
+            {products.map((product) => (
+              <div key={product.id} className="group relative">
+                <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md lg:aspect-none group-hover:opacity-75 lg:h-80">
+                  <img
+                    src={product.imageSrc}
+                    alt={product.imageAlt}
+                    className="h-full w-full object-cover object-center lg:h-full lg:w-full"
+                  />
                 </div>
-                <p className="text-sm font-medium text-gray-900">{product.price}</p>
+                <div className="mt-4 flex justify-between">
+                  <div>
+                    <h3 className="text-sm text-gray-700">
+                      <a href={product.href}>
+                        <span aria-hidden="true" className="absolute inset-0" />
+                        {product.name}
+                      </a>
+                    </h3>
+                    <p className="mt-1 text-sm text-gray-500">{product.color}</p>
+                  </div>
+                  <p className="text-sm font-medium text-blue-400">{product.price}</p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className='w-full h-[90vh] bg-black '>
+        <div className='w-full h-[30%]' > 
+        <img src="./src/assets/FF7ACBD0-24CD-49EC-80AB-9D96E9F008E5_upscayl_4x_realesrgan-x4plus.png" alt="" className='w-full h-full object-cover'/>
+        </div>
+        <div className='h-[50%] border border-red-600 '>
+
+        </div>
+      </div>
+      
+
+      
 
       
     </>
