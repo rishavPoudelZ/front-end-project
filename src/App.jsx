@@ -316,29 +316,30 @@ export default function Example() {
           <img src="./src/assets/FF7ACBD0-24CD-49EC-80AB-9D96E9F008E5_upscayl_4x_realesrgan-x4plus.png" alt="" className='w-full h-full object-cover' />
         </div>
         <div className='h-[50%] w-full sm:flex relative text-gray-400 sm:h-[30%]'>
-          <div className='w-full h-[50px] m-4'>
+          <div className='w-full h-[50px] p-4'>
             <i className="fa-solid fa-a text-[32px]"></i>
             <span className='ml-4 text-xl'>GAMING LAPTOPS</span>
           </div>
           <div>
-            <div className="space-y-2 py-6">
+            <div className="space-y-2 py-6 sm:w-[450px]">
               {navigation.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="block px-3 py-2 text-base font-semibold leading-7 border-b sm:inline sm:border-none"
+                  className="block px-3 py-2 text-base font-semibold leading-7 border-b sm:inline sm:border-none after hover:text-red-600"
                 >
                   {item.name}
                 </a>
               ))}
             </div>
-            <div className='flex justify-evenly h-[60px] items-center'>
+            <div className='flex justify-evenly h-[60px] items-center '>
               {links.map((link) => (
                 <a
                   key={link.id}
                   href={link.href}
+                  className='hover:text-red-600 px-4'
                 >
-                  <i className={link.icon}></i>
+                  <i className={link.icon} ></i>
                 </a>
               ))}
             </div>
