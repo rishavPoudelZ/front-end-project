@@ -19,5 +19,6 @@
   
   .after:hover:after {
     width: 100%;
+    cursor: pointer;
   }
   

@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import "../src/App.css";
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -14,6 +16,40 @@ const navigation = [
   { name: 'Company', href: '#' },
 ]
 
+const links = [
+  {
+    id: 1,
+    href:'#',
+    icon:"fa-brands fa-facebook-f"
+  },
+  {
+    id: 2,
+    href:'#',
+    icon:"fa-brands fa-x-twitter"
+  },
+  {
+    id: 3,
+    href:'#',
+    icon:"fa-brands fa-discord"
+  },
+  {
+    id: 4,
+    href:'#',
+    icon:"fa-brands fa-youtube"
+  },
+  {
+    id: 5,
+    href:'#',
+    icon:"fa-brands fa-twitch"
+  },
+  {
+    id: 6,
+    href:'#',
+    icon:"fa-brands fa-instagram"
+  },
+
+]
+
 const articles = [
   {
     id: 1,
@@ -22,7 +58,7 @@ const articles = [
     price: '$48',
     imageSrc: './src/assets/h47.png',
     imageAlt: 'Tall slender porcelain bottle with natural clay textured body and cork stopper.',
-    text:'ROG Zephyrus'
+    text: 'ROG Zephyrus'
   },
   {
     id: 2,
@@ -31,7 +67,7 @@ const articles = [
     price: '$35',
     imageSrc: './src/assets/h4.png',
     imageAlt: 'Olive drab green insulated bottle with flared screw lid and flat top.',
-    text:'ROG Strix'
+    text: 'ROG Strix'
 
   },
   {
@@ -41,7 +77,7 @@ const articles = [
     price: '$89',
     imageSrc: './src/assets/h470.png',
     imageAlt: 'Person using a pen to cross a task off a productivity paper card.',
-    text:'ROG Flow'
+    text: 'ROG Flow'
 
   },
   {
@@ -51,7 +87,7 @@ const articles = [
     price: '$35',
     imageSrc: './src/assets/1655506515601_upscayl_4x_realesrgan-x4plus.png',
     imageAlt: 'Hand holding black machined steel mechanical pencil with brass tip and top.',
-    text:'Accessories'
+    text: 'Accessories'
   }
 ]
 
@@ -100,7 +136,7 @@ export default function Example() {
 
   return (
     <>
-      <div className="bg-cover bg-center h-screen" style={{ backgroundImage: 'url("src/assets/LandingImage.webp")'}}>
+      <div className="bg-cover bg-center h-screen" style={{ backgroundImage: 'url("src/assets/LandingImage.webp")' }}>
         <header className="absolute inset-x-0 top-0 z-50">
           <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
             <div className="flex lg:flex-1">
@@ -132,7 +168,7 @@ export default function Example() {
             </div>
             <div className="hidden lg:flex lg:flex-1 lg:justify-end">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="white" className="w-5 h-5 mr-5  hover:fill-red-600 hover:cursor-pointer">
-                  <path d="M1 1.75A.75.75 0 0 1 1.75 1h1.628a1.75 1.75 0 0 1 1.734 1.51L5.18 3a65.25 65.25 0 0 1 13.36 1.412.75.75 0 0 1 .58.875 48.645 48.645 0 0 1-1.618 6.2.75.75 0 0 1-.712.513H6a2.503 2.503 0 0 0-2.292 1.5H17.25a.75.75 0 0 1 0 1.5H2.76a.75.75 0 0 1-.748-.807 4.002 4.002 0 0 1 2.716-3.486L3.626 2.716a.25.25 0 0 0-.248-.216H1.75A.75.75 0 0 1 1 1.75ZM6 17.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM15.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+                <path d="M1 1.75A.75.75 0 0 1 1.75 1h1.628a1.75 1.75 0 0 1 1.734 1.51L5.18 3a65.25 65.25 0 0 1 13.36 1.412.75.75 0 0 1 .58.875 48.645 48.645 0 0 1-1.618 6.2.75.75 0 0 1-.712.513H6a2.503 2.503 0 0 0-2.292 1.5H17.25a.75.75 0 0 1 0 1.5H2.76a.75.75 0 0 1-.748-.807 4.002 4.002 0 0 1 2.716-3.486L3.626 2.716a.25.25 0 0 0-.248-.216H1.75A.75.75 0 0 1 1 1.75ZM6 17.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0ZM15.5 19a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
               </svg>
               <a href="#" className="text-sm font-semibold leading-6 text-white  hover:text-red-600">
                 Log in <span aria-hidden="true">&rarr;</span>
@@ -187,38 +223,38 @@ export default function Example() {
           </Dialog>
         </header>
         <div className='container center borderS'>
-        <div className="relative">
-          <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
-            <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-              <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
-                Announcing our next generation of rog.{' '}
-                <a href="#" className="font-semibold text-indigo-300">
-                  <span className="absolute inset-0" aria-hidden="true" />
-                  Read more <span aria-hidden="true">&rarr;</span>
-                </a>
+          <div className="relative">
+            <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+              <div className="hidden sm:mb-8 sm:flex sm:justify-center">
+                <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                  Announcing our next generation of rog.{' '}
+                  <a href="#" className="font-semibold text-indigo-300">
+                    <span className="absolute inset-0" aria-hidden="true" />
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </a>
+                </div>
               </div>
-            </div>
-            <div className="text-center">
-              <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-                Elevate Your <br /> Gaming Realm
-              </h1>
-              <p className="mt-6 text-lg leading-8 text-red-300">
-              ASUS ROG Series – Where Power Meets Precision
-              </p>
-              <div className="mt-10 flex items-center justify-center gap-x-6">
-                <a
-                  href="#"
-                  className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-                >
-                  Get started
-                </a>
-                <a href="#" className="text-sm font-semibold leading-6 text-gray-200">
-                  Learn more <span aria-hidden="true">→</span>
-                </a>
+              <div className="text-center">
+                <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                  Elevate Your <br /> Gaming Realm
+                </h1>
+                <p className="mt-6 text-lg leading-8 text-red-300">
+                  ASUS ROG Series – Where Power Meets Precision
+                </p>
+                <div className="mt-10 flex items-center justify-center gap-x-6">
+                  <a
+                    href="#"
+                    className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  >
+                    Get started
+                  </a>
+                  <a href="#" className="text-sm font-semibold leading-6 text-gray-200">
+                    Learn more <span aria-hidden="true">→</span>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-        </div>
         </div>
       </div>
 
@@ -275,19 +311,52 @@ export default function Example() {
         </div>
       </div>
 
-      <div className='w-full h-[90vh] bg-black '>
-        <div className='w-full h-[30%]' > 
-        <img src="./src/assets/FF7ACBD0-24CD-49EC-80AB-9D96E9F008E5_upscayl_4x_realesrgan-x4plus.png" alt="" className='w-full h-full object-cover'/>
+      <div className='w-full h-[90vh] bg-black sm:h-[80vh]'>
+        <div className='w-full h-[30%] sm:h-[50%]' >
+          <img src="./src/assets/FF7ACBD0-24CD-49EC-80AB-9D96E9F008E5_upscayl_4x_realesrgan-x4plus.png" alt="" className='w-full h-full object-cover' />
         </div>
-        <div className='h-[50%] border border-red-600 '>
-
+        <div className='h-[50%] w-full sm:flex relative text-gray-400 sm:h-[30%]'>
+          <div className='w-full h-[50px] m-4'>
+            <i className="fa-solid fa-a text-[32px]"></i>
+            <span className='ml-4 text-xl'>GAMING LAPTOPS</span>
+          </div>
+          <div>
+            <div className="space-y-2 py-6">
+              {navigation.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="block px-3 py-2 text-base font-semibold leading-7 border-b sm:inline sm:border-none"
+                >
+                  {item.name}
+                </a>
+              ))}
+            </div>
+            <div className='flex justify-evenly h-[60px] items-center'>
+              {links.map((link) => (
+                <a
+                  key={link.id}
+                  href={link.href}
+                >
+                  <i className={link.icon}></i>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        <div className='text-gray-400 h-[20%] p-4'>
+          <i className="fa-solid fa-globe"></i> <span> Gobal English</span>
+          <div>
+            <span className='mr-2'> Privacy Policy</span><span>Terms of use notice</span> <br />
+            <span>&copy; ASUSTEK COMPUTER INC. ALL RIGHTS RESERVED</span>
+          </div>
         </div>
       </div>
-      
 
-      
 
-      
+
+
+
     </>
   )
 }
